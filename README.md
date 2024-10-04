@@ -158,3 +158,40 @@ Ancak şimdilik, bu istemcinin nasıl yorumlanacağını bilmek yeterlidir. Vars
 
 Bazı Unix veya Linux sistemlerinde root yetkileri paylaşılabilir; bu da ```su``` ve ```sudo``` gibi komutlar kullanılarak yapılır. 
 Ayrıca, bazı sistemlerde root yetkileri sınırlı olabilir; örneğin NSA'nın SELinux gibi zorunlu erişim kontrol (MAC) sistemleri çalıştırılıyorsa.
+
+# Bulunduğunuz Yeri Gösterme
+
+## Problem
+
+Hangi dizinde olduğunuzu bilmiyorsunuz ve varsayılan istemci (prompt) size yardımcı olmuyor.
+
+## Çözüm
+
+Bulunduğunuz dizini öğrenmek için ```pwd``` yerleşik komutunu kullanabilir veya daha faydalı bir istemci ayarlayabilirsiniz. 
+
+Örneğin:
+
+Resim :
+
+![Resim](https://i.ibb.co/ZYdyBK8/resim-2024-10-05-003032131.png)
+
+```bash
+export PS1='[\u@\h \w]$ '
+```
+
+Resim :
+
+![Resim](https://i.ibb.co/xq8pJVP/Bash-Prompt.png)
+
+## Tartışma
+
+pwd, "print working directory" (çalışma dizinini yazdır) anlamına gelir ve iki seçenek alır:
+
+- -L: Mantıksal yolu gösterir ve varsayılan seçenektir.
+- -P: Fiziksel konumu gösterir; bu, sembolik bir bağlantıyı takip ettiyseniz mantıksal yolunuzdan farklı olabilir.
+
+## Açıklama
+
+- pwd komutu, bulunduğunuz dizinin tam yolunu gösterir.
+- pwd -L komutu, sembolik bağlantıları dikkate alarak mantıksal yolu gösterir.
+- pwd -P komutu ise gerçek fiziksel yolu gösterir, yani bağlantılara bakılmaksızın nerede olduğunuzu belirtir.
