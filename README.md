@@ -103,3 +103,58 @@ Unix veya Linux kullanıyorsanız, muhtemelen bash ile daha önce karşılaştı
 Bash, aslında komutları çalıştırmak için bir dildir; dolayısıyla şimdiye kadar yazdığınız komutlar (örneğin, ls, cd, grep, cat) aslında bash komutlarıdır. 
 Bazı komutlar bash’in kendisine entegre edilmiştir; diğerleri ise ayrı programlardır. Şu aşamada hangisinin hangisi olduğunun önemi yoktur.
 
+# Komut Satırı İstemcisi: Anlamı ve Yapısı
+
+## Giriş
+
+Komut satırı istemcisi, kullanıcıların işletim sistemi ile etkileşimde bulunmasını sağlayan bir araçtır.
+Bu kısımda, ekranınızdaki tüm işaretlerin ne anlama geldiğini anlamanıza yardımcı olacağız.
+
+## İstemci Nedir?
+
+Tüm komut satırı shell'leri, kullanıcıya girdi alabileceğini bildiren bir istemciye sahiptir. 
+İstemcinin görünümü, işletim sistemi türü, versiyonu, shell türü ve versiyonu, dağıtım ve yapılandırma gibi birçok faktöre bağlıdır.
+
+# İstemci Sembolleri
+
+## Kullanıcı ve Root Hesabı
+
+Bourne ailesi shell'lerinde, istemcinin sonunda bulunan ```$``` işareti, normal bir kullanıcı olarak oturum açtığınızı gösterirken, 
+```#``` işareti root (yönetici) hesabında olduğunuzu belirtir. 
+Root hesabı, sistemin yöneticisidir ve genellikle Windows'taki Sistem hesabına veya Netware'deki Supervisor hesabına eşdeğerdir. 
+Root, Unix veya Linux sistemlerinde her şeye müdahale edebilir.
+
+![Resim](https://i.ibb.co/3s8CLnt/Sembols-Bash.png)
+
+## Mevcut Dizin Bilgisi
+
+Varsayılan istemciler, bulunduğunuz dizinin yolunu da gösterebilir; genellikle bu yol kısaltılarak gösterilir. 
+Örneğin, ```~``` sembolü, home dizininizde olduğunuzu belirtir.
+
+# Örnek İstemciler
+
+## Kullanıcı İstemcisi 
+
+Aşağıda, kali adlı bir kullanıcının kali adlı bir makinede home dizininde oturum açtığı tipik bir Linux istemcisi örneği verilmiştir:
+
+Resim :
+
+![Resim](https://i.ibb.co/TMRYGDj/Home-Bash.png)
+
+## Dizin Değişimi
+
+/tmp dizinine geçtikten sonraki istemci:
+
+![Resim](https://i.ibb.co/m4rx386/Directory-Bash.png)
+
+Burada ~, aslında /home/kali anlamına gelirken, /tmp dizinine geçildiğinde bu değişmiştir.
+
+## Tartışma
+
+Shell'in istemcisi, komut satırında çalışırken en sık göreceğiniz şeydir ve daha fazla özelleştirme yapmanın birçok yolu vardır. 
+Ancak şimdilik, bu istemcinin nasıl yorumlanacağını bilmek yeterlidir. Varsayılan istemciniz farklı olabilir, ancak temel bilgileri anlamanız yeterli olacaktır.
+
+## Root Yetkileri
+
+Bazı Unix veya Linux sistemlerinde root yetkileri paylaşılabilir; bu da ```su``` ve ```sudo``` gibi komutlar kullanılarak yapılır. 
+Ayrıca, bazı sistemlerde root yetkileri sınırlı olabilir; örneğin NSA'nın SELinux gibi zorunlu erişim kontrol (MAC) sistemleri çalıştırılıyorsa.
